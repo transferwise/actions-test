@@ -15,6 +15,7 @@ try {
   console.log(`The event payload: ${payload}`);
 
   // Scan directories
+  const testFolder = core.getInput('dir');
   let files = fs.readdirSync(testFolder)
   files.forEach(file => {
   	console.log(file);
