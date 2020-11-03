@@ -1,0 +1,24 @@
+{
+  "name": "actions-test",
+  "version": "1.0.0",
+  "description": "testing custom external github action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transferwise/actions-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/transferwise/actions-test/issues"
+  },
+  "homepage": "https://github.com/transferwise/actions-test#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
