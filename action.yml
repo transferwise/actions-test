@@ -45,6 +45,4 @@ runs:
         echo Time is: $TIME
         echo "::set-output name=time::'$(echo $TIME)'"
       shell: bash
-    - run: env
-      shell: bash
 
