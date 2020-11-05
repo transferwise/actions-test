@@ -19,7 +19,7 @@ outputs:
     value: ${{ steps.random-number-generator.outputs.random-id }}
   listing: 
     description: 'directory listing'
-    value: ${{ steps.lisitng.outputs.listing }}
+    value: ${{ steps.listing.outputs.listing }}
 
 
 runs:
@@ -43,7 +43,7 @@ runs:
         echo "Listing of directory ${{ inputs.dir }}" 
         LISTING=$(ls -la ${{ inputs.dir }})
         echo $LISTING
-        echo "::set-output name=listing::''$(echo $LISTING)''"
+        echo "::set-output name=listing::'$(echo $LISTING)'"
       shell: bash
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
@@ -54,6 +54,6 @@ runs:
       run: |
         TIME=$(date)
         echo Time is: $TIME
-        echo "::set-output name=time::'$(echo $TIME)'"
+        echo "::set-output name=time::$(echo $TIME)"
       shell: bash
 
