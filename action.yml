@@ -14,10 +14,25 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-        #  using: 'docker'
-        #  image: 'Dockerfile'
-        #  args:
-        #    - ${{ inputs.dir }}
-  using: 'node12'
-  main: 'index.js'
-
+  # DOCKER ACTION
+  #  using: 'docker'
+  #  image: 'Dockerfile'
+  #  args:
+  #    - ${{ inputs.dir }}
+  
+  # JS ACTION
+  # using: 'node12'
+  # main: 'index.js'
+  
+  # COMPOSITE ACTION (bash)
+  using: "composite"
+  steps: 
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
+    - run: echo "Listing of directory ${{ inputs.dir }}" && ls -la ${{ inputs.dir }}
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+    - run: ${{ github.action_path }}/goodbye.sh
+      shell: bash
