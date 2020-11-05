@@ -1,4 +1,3 @@
-#!/bin/bash
 
 echo "Good Bye!"
-echo "(good bye ${{ inputs.who-to-greet }})"
+echo "(good bye ${1})"
