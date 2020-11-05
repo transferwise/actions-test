@@ -34,5 +34,12 @@ runs:
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
+    - run: ${{ github.action_path }}/goodbye.sh ${{ inputs.who-to-greet }}
+      shell: bash
+    - run: |
+        TIME=$(date)
+        echo Time is: $TIME
+        echo "::set-output name=time::$(echo $TIME)"
+      shell: bash
+    - run: env
       shell: bash
