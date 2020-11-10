@@ -1,17 +1,19 @@
 # action.yml
 name: 'Hello World'
-description: 'Greet someone and record the time'
+description: 'Composite action example'
+
 inputs:
-  who-to-greet:  # id of input
+  who-to-greet:
     description: 'Who to greet'
     required: true
     default: 'World'
-  dir:  # id of input
+  dir:
     description: 'List of files'
     required: true
     default: './'
+
 outputs:
-  time: # id of output
+  time:
     description: 'The time we greeted you'
     value: ${{ steps.time.outputs.time }}
   random-id: 
@@ -23,37 +25,30 @@ outputs:
 
 
 runs:
-  # DOCKER ACTION
-  #  using: 'docker'
-  #  image: 'Dockerfile'
-  #  args:
-  #    - ${{ inputs.dir }}
-  
-  # JS ACTION
-  # using: 'node12'
-  # main: 'index.js'
-  
   # COMPOSITE ACTION (bash)
   using: "composite"
   steps: 
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    - id: listing
-      run: |
-        echo "Listing of directory ${{ inputs.dir }}" 
-        LISTING=$(ls -la ${{ inputs.dir }})
-        echo $LISTING
-        echo "::set-output name=listing::'$(echo $LISTING)'"
-      shell: bash
+
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
+
+    - id: listing
+      run: |
+        echo "Listing of directory ${{ inputs.dir }}"
+        ls -la ${{ inputs.dir }}
+        LISTING=$(ls -la ${{ inputs.dir }})
+        echo "::set-output name=listing::'$(echo $LISTING)'"
+      shell: bash
+
     - run: ${{ github.action_path }}/goodbye.sh ${{ inputs.who-to-greet }}
       shell: bash
+
     - id: time
       run: |
         TIME=$(date)
         echo Time is: $TIME
         echo "::set-output name=time::$(echo $TIME)"
       shell: bash
-

@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: [self-hosted]
+    name: A job to say hello
+    steps:
+
+      - name: Hello world action step
+        id: hello
+        uses: transferwise/actions-test@v0.5.7
+        with:
+          who-to-greet: 'Transferwise'
+
+      # Use the output from the `hello` step
+      - name: Get all outputs
+        run: |
+          echo "The time was ${{ steps.hello.outputs.time }}"
+          echo "The listing was ${{ steps.hello.outputs.listing }}"
+          echo "The random id was ${{ steps.hello.outputs.random-id }}"
+          echo "And all outputs was ${{ toJson(steps.hello) }}"
+          echo "And all steps was ${{ toJson(steps) }}"
