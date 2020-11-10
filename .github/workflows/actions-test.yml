@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   hello_world_job:
-    runs-on: [self-hosted]
+#    runs-on: [self-hosted] # can't use self-hosted on action because it is public
     name: A job to say hello
     steps:
 
