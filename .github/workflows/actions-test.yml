@@ -8,7 +8,7 @@ jobs:
 
       - name: Hello world action step
         id: hello
-        uses: transferwise/actions-test@v0.5.7
+        uses: transferwise/actions-test@v0.6.0-composite
         with:
           who-to-greet: 'Transferwise'
           dir: /
