@@ -17,5 +17,5 @@ jobs:
       - name: Get all outputs
         run: |
           echo "The time was ${{ steps.hello.outputs.time }}"
-          echo "The listing was ${{ steps.hello.outputs.listing }}"
+          echo "The listing was: " && echo "${{ steps.hello.outputs.listing }}"
           echo "The random id was ${{ steps.hello.outputs.random-id }}"

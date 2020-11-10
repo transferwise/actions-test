@@ -39,7 +39,7 @@ runs:
       run: |
         echo "Listing of directory ${{ inputs.dir }}"
         ls -la ${{ inputs.dir }}
-        LISTING=$(ls -la ${{ inputs.dir }})
+        LISTING=$(ls ${{ inputs.dir }})
         echo "::set-output name=listing::'$(echo $LISTING)'"
       shell: bash
 
