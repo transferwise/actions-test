@@ -20,3 +20,5 @@ Usage:
           echo "The listing was: " && echo "${{ steps.hello.outputs.listing }}"
           echo "The time was ${{ steps.hello.outputs.time }}"
 ```
+Run examples:
+https://github.com/transferwise/actions-test/pull/1/checks
