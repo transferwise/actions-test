@@ -1,9 +1,17 @@
 #!/bin/sh -l
 
-echo "Hello!  Dir: $1"
+echo "Hello ${1}!"
+
+
 time=$(date)
+echo "Time is"
+echo "${time}"
 echo "::set-output name=time::$time"
 
-LISTING=$(ls -lah $1)
-echo $LISTING
+echo "Listing is "
+ls $2
+LISTING=$(ls -lah $2)
 echo "::set-output name=listing::$LISTING"
+
+echo "Set random"
+echo "::set-output name=listing::$RANDOM"
