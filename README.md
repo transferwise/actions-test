@@ -1,2 +1,4 @@
 # actions-test
-testing custom external github action
+Example of a custom github action
+
+## Composite action
