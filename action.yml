@@ -28,4 +28,4 @@ runs:
   args:
     - ${{ inputs.who-to-greet }}
     - ${{ inputs.dir }}
-  post-entrypoint: 'goodbye.sh'
+  post-entrypoint: '/goodbye.sh'

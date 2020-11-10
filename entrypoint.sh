@@ -9,9 +9,9 @@ echo "${time}"
 echo "::set-output name=time::$time"
 
 echo "Listing is "
-ls $2
-LISTING=$(ls -lah $2)
+ls -lah $2
+LISTING=$(ls $2)
 echo "::set-output name=listing::$LISTING"
 
 echo "Set random"
-echo "::set-output name=listing::$RANDOM"
+echo "::set-output name=random-id::$RANDOM"
