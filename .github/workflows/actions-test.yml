@@ -12,6 +12,7 @@ jobs:
         env:
           WHO_TO_GREET: 'Transferwise'
           DIR: /
+        run: echo "void"
 
       # Use the output from the `hello` step
       - name: Get all outputs
