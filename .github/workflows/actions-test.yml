@@ -1,8 +1,9 @@
-# actions-test
-Example of a custom github action
+on: [push]
 
-## Usage example
-```yml
+jobs:
+  hello_world_job:
+    runs-on: [ubuntu-latest] # can't use self-hosted on action because it is public
+    name: A job to say hello
     container: prohfesor/actions_test
     steps:
 
@@ -24,6 +25,3 @@ Example of a custom github action
           echo "The random id was ${{ steps.hello.outputs.random-id }}"
           echo "The listing was: " && echo "${{ steps.hello.outputs.listing }}"
           echo "The time was ${{ steps.hello.outputs.time }}"
-```
-
-Run examples: https://github.com/transferwise/actions-test/pull/4/checks
