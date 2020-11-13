@@ -13,6 +13,7 @@ jobs:
           WHO_TO_GREET: 'Transferwise'
           DIR: /
         run: |
+          source ./entrypoint.sh
           greet
           out_time
           out_other
