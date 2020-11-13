@@ -9,6 +9,7 @@ jobs:
 
       - name: Hello world action step
         id: hello
+        shell: bash
         env:
           WHO_TO_GREET: 'Transferwise'
           DIR: /
