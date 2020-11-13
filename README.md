@@ -3,14 +3,20 @@ Example of a custom github action
 
 ## Usage example
 ```yml
+    container: prohfesor/actions_test
     steps:
 
       - name: Hello world action step
         id: hello
-        uses: transferwise/actions-test@v0.6.1-docker
-        with:
-          who-to-greet: 'Transferwise'
-          dir: /
+        shell: bash
+        env:
+          WHO_TO_GREET: 'Transferwise'
+          DIR: /
+        run: |
+          source /entrypoint.sh
+          greet
+          out_time
+          out_other
 
       # Use the output from the `hello` step
       - name: Get all outputs
@@ -20,4 +26,4 @@ Example of a custom github action
           echo "The time was ${{ steps.hello.outputs.time }}"
 ```
 
-Run examples: https://github.com/transferwise/actions-test/pull/2/checks
+Run examples: https://github.com/transferwise/actions-test/pull/4/checks
