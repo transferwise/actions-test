@@ -1,6 +1,8 @@
 # actions-test
 Different ways to create a custom action.
 
+This example code is refered from wiki article: https://transferwise.atlassian.net/wiki/spaces/EKB/pages/1549557615/Creating+your+own+action
+
 Here you can find examples of how to create very simple github action, with different approaches available.
 
 This simple action prints out `hello world` (or `!FNAME!`, as set).
