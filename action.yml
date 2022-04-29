@@ -24,7 +24,7 @@ outputs:
 runs:
   # DOCKER ACTION
   using: 'docker'
-  #image: 'docker://
+  image: './'
   args:
     - ${{ inputs.who-to-greet }}
     - ${{ inputs.dir }}
