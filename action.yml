@@ -50,6 +50,5 @@ runs:
       run: |
         TIME=$(date)
         echo Time is: $TIME
-        echo "::set-output name=time::$(echo $TIME)"
         echo "{time}=$(echo $TIME)" >> $GITHUB_OUTPUT
       shell: bash
