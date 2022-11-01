@@ -23,7 +23,7 @@ outputs:
 
 runs:
   # JS ACTION
-  using: 'node12'
+  using: 'node16'
   pre: 'setup.js'
   main: 'index.js'
   post: 'goodbye.js'
