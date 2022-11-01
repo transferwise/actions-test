@@ -50,5 +50,5 @@ runs:
       run: |
         TIME=$(date)
         echo Time is: $TIME
-        echo "{time}=$(echo $TIME)" >> $GITHUB_OUTPUT
+        echo "time=$(echo $TIME)" >> $GITHUB_OUTPUT
       shell: bash
