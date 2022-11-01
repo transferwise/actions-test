@@ -6,12 +6,12 @@ echo "Hello ${1}!"
 time=$(date)
 echo "Time is"
 echo "${time}"
-echo "::set-output name=time::$time"
+echo "time=$time" >> $GITHUB_OUTPUT
 
 echo "Listing is "
 ls -lah $2
 LISTING=$(ls $2)
-echo "::set-output name=listing::$LISTING"
+echo "listing::$LISTING" >> $GITHUB_OUTPUT
 
 echo "Set random"
-echo "::set-output name=random-id::$RANDOM"
+echo "random-id=$RANDOM" >> $GITHUB_OUTPUT
