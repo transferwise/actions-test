@@ -32,7 +32,7 @@ runs:
       shell: bash
 
     - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      run: echo "random-id=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
 
     - id: listing
@@ -40,7 +40,7 @@ runs:
         echo "Listing of directory ${{ inputs.dir }}"
         ls -la ${{ inputs.dir }}
         LISTING=$(ls ${{ inputs.dir }})
-        echo "::set-output name=listing::'$(echo $LISTING)'"
+        echo "listing='$(echo $LISTING)'" >> $GITHUB_OUTPUT
       shell: bash
 
     - run: ${{ github.action_path }}/goodbye.sh ${{ inputs.who-to-greet }}
@@ -51,4 +51,5 @@ runs:
         TIME=$(date)
         echo Time is: $TIME
         echo "::set-output name=time::$(echo $TIME)"
+        echo "{time}=$(echo $TIME)" >> $GITHUB_OUTPUT
       shell: bash
